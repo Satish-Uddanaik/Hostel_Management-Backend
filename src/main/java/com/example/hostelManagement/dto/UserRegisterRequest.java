@@ -2,10 +2,7 @@ package com.example.hostelManagement.dto;
 
 import com.example.hostelManagement.constants.Position;
 import com.example.hostelManagement.constants.Role;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +26,7 @@ public class UserRegisterRequest {
     @Size(min=6,message = "Password must be at least 6 characters")
     private String password;
 
+    @Pattern(regexp = "^[6-9]\\d{9}$")
     private String phone;
 
     @NotNull(message = "Please select role")

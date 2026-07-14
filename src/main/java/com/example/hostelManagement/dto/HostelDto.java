@@ -20,7 +20,7 @@ public class HostelDto {
     @Min(0)
     private Integer empty_seats;
 
-    @NotBlank(message = "hostel name may not be blank")
+    @Size(min = 3, max = 100)
     private String name;
 
     @NotBlank(message = "hostel address may not be blank")
