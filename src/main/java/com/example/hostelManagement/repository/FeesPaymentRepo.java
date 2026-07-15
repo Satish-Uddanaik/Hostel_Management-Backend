@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface FeesPaymentRepo extends JpaRepository<FeesPayment,Integer> {
+public interface FeesPaymentRepo extends JpaRepository<FeesPayment,String> {
 
     @Query("SELECT f FROM FeesPayment f WHERE f.transactionId = :transactionId")
     Optional<FeesPayment> findByTransactionId(@Param("transactionId") String transactionId);
